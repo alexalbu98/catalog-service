@@ -8,9 +8,6 @@ management:
         include: refresh
 
 spring:
-  sql:
-    init:
-      mode: always
   application:
     name: catalog-service
   datasource:
