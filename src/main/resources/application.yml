@@ -1,6 +1,9 @@
 polar:
   greeting: Welcome to the local book catalog!
 
+server:
+  port: 9001
+
 management:
   endpoints:
     web:
