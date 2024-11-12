@@ -33,7 +33,7 @@ spring:
     import: "optional:configserver:"
   cloud:
     config:
-      uri: http://localhost:8888
+      uri: http://config-server
       request-connect-timeout: 5000
       request-read-timeout: 5000
       fail-fast: false
