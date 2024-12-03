@@ -3,10 +3,7 @@ package com.bookshop.catalog_service.domain;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Positive;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.annotation.LastModifiedDate;
-import org.springframework.data.annotation.Version;
+import org.springframework.data.annotation.*;
 
 import java.time.Instant;
 
@@ -33,13 +30,17 @@ public record Book(
         @LastModifiedDate
         Instant lastModifiedDate,
         @Version
-        int version
+        int version,
+        @CreatedBy
+        String createdBy,
+        @LastModifiedBy
+        String lastModifiedBy
 ) {
     public static Book of(
             String isbn, String title, String author, Double price
     ) {
         return new Book(
-                null, isbn, title, author, price, null, null, null, 0
+                null, isbn, title, author, price, null, null, null, 0, null, null
         );
     }
 }
